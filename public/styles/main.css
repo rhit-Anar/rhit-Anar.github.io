@@ -1,0 +1,174 @@
+/* first import from google font */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
+
+
+
+:root {
+   --vertical-space: 2rem;
+   --horizontal-space: 3rem; 
+
+   --light-color:#C4F3CD;
+   --body-color: #0f2283;
+   --heading-color:#704adb;
+   --subheading-color:#642907;
+   --constract-color:#1b99ff;
+}
+body {
+    padding-left: 4em;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(90deg, rgba(165, 165, 165, 0.03) 0%, rgba(165, 165, 165, 0.03) 
+    8%,rgba(235, 235, 235, 0.03) 8%, rgba(235, 235, 235, 0.03) 9%,rgba(7, 7, 7, 0.03) 9%,
+     rgba(7, 7, 7, 0.03) 14%,rgba(212, 212, 212, 0.03) 14%, rgba(212, 212, 212, 0.03) 17%
+     ,rgba(219, 219, 219, 0.03) 17%, rgba(219, 219, 219, 0.03) 95%,rgba(86, 86, 86, 0.03) 95%
+     , rgba(86, 86, 86, 0.03) 100%),linear-gradient(67.5deg, rgba(80, 80, 80, 0.03) 0%, rgba(80, 80, 80, 0.03) 11%
+     ,rgba(138, 138, 138, 0.03) 11%, rgba(138, 138, 138, 0.03) 17%,rgba(122, 122, 122, 0.03) 17%, rgba(122, 122, 122, 0.03) 24%
+     ,rgba(166, 166, 166, 0.03) 24%, rgba(166, 166, 166, 0.03) 27%,rgba(245, 245, 245, 0.03) 27%, rgba(245, 245, 245, 0.03) 89%,rgba(88, 88, 88, 0.03) 89%
+     , rgba(88, 88, 88, 0.03) 100%),linear-gradient(67.5deg, rgba(244, 244, 244, 0.03) 0%, rgba(244, 244, 244, 0.03) 4%,rgba(16, 16, 16, 0.03) 4%, rgba(16, 16, 16, 0.03) 10%
+     ,rgba(157, 157, 157, 0.03) 10%, rgba(157, 157, 157, 0.03) 20%,rgba(212, 212, 212, 0.03) 20%, rgba(212, 212, 212, 0.03) 83%,rgba(5, 5, 5, 0.03) 83%, rgba(5, 5, 5, 0.03) 84%
+     ,rgba(237, 237, 237, 0.03) 84%, rgba(237, 237, 237, 0.03) 100%),linear-gradient(90deg, #ffffff,#ffffff);
+    
+     color: var(--body-color);
+
+}
+
+h1 {
+    line-height: 1.2;
+    font-family: 'Tangerine', cursive;
+    color: var(--heading-color);
+
+}
+
+h2, h3 {
+    line-height: 1.2;
+    font-family: 'Raleway', sans-serif;
+    color: var(--heading-color);
+}
+/* to make underline for links */
+a {
+    color: var(--body-color);
+    text-decoration-color: var(--constract-color);
+}
+/* when hover over the link it match with the color */
+a:hover{
+    color: var(--constract-color);
+    text-decoration-color: var(--heading-color);
+}
+
+body#about img { 
+    height: 15em; 
+    display: inline;
+    float:left;
+    margin-right:var(--horizontal-space);
+    border: 1px solid var(--constract-color);
+    /* shadow for boximg */
+    box-shadow: -3px 2px 4px 6px rgba(0,0,0, 0.74);
+    
+}
+@media screen and (min-width: 25em){
+    body#about img{
+        float: left;
+        margin-bottom: var(--vertical-space);
+    }
+
+}
+body#portfolio img { height: 25em; }
+
+p {
+    max-width: 50 em;
+
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                         "nav nav"
+                         "main main"
+                        "foot foot";
+    grid-template-columns: auto 4fr;
+    grid-template-rows: auto auto lfr auto;
+}
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: "head nav"
+                             "main main"
+                             "foot foot";
+        grid-template-rows: auto lfr auto;
+}
+body > nav{
+    grid-area: nav;
+    padding-top: var(--vertical-space);
+    /* background-color: rgb(38, 162, 178); */
+}
+    
+}
+
+body > * {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+    border-bottom: 1.5px solid var(--subheading-color);
+}
+body > header {
+    grid-area: head;
+    /* background-color: rgb(42, 133, 117); */
+}
+body > nav{
+    grid-area: nav;
+}
+
+body > nav ul li {
+    /* list-style-type: none;
+    padding: 0; */
+    content:"";
+    display: inline-block;
+    padding-right: 1em;
+    margin-top: 1em;
+}
+body> main {
+    max-width: 50rem;
+ }
+ body > nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height:2.4;
+    /* background-color: rgb(13, 185, 228); */
+ }
+
+ body > nav ul {
+    float: right;
+ }
+
+ body > footer{
+    grid-area: foot;
+    /* background-color: rgb(17, 91, 117); */
+ }
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+header h1, footer h1{
+    margin: 0;
+}
+
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+@media screen and (min-width: 25em){
+body#portfolio ul#portfolioItems li{
+    flex-basis: 48%;
+    padding-right: 2%;
+}
+}
+body#portfolio ul#portfolioItems li img{
+    max-width: 100%;
+    margin-left: -0.66em;
+
+}
